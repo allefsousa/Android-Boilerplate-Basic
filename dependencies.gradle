@@ -1,24 +1,19 @@
 ext {
-    minSDK = 16
-    targetSDK = 28
-    compileSDK = 28
+    minSDK = 19
+    targetSDK = 29
+    compileSDK = 29
+    buildTools = '29.0.2'
 
     buildTools = '29.0.0'
-    jacoco = '0.8.1'
-    kotlin_version = '1.3.41'
+    kotlin_version = '1.3.50'
     lifecycle_version = "2.0.0"
-    anko_version = "0.10.8"
     lottie = "3.0.7"
-    appCompat = "1.0.2"
-    androidCore = "1.0.2"
-    constraintLayout = "1.1.3"
-    androidMaterial = "1.1.0-alpha06"
+    appCompat = "1.1.0"
+    androidCore = "1.2.0"
+    constraintLayout = "2.0.0-beta2"
+    androidMaterial = "1.2.0-alpha05"
     androidLegacy = "1.0.0"
-    junitVersion = "4.12"
-    firebaseCore = "17.0.0"
-    espressoVersion = "3.2.0"
-    runnerVersion = "1.2.0"
-    koin = "1.0.2"
+    koin = "2.0.1"
     nav_version = '2.1.0-beta02'
     retrofit_version = '2.5.0'
     okhttp_version = '3.12.0'
@@ -26,41 +21,178 @@ ext {
     gson_version = '2.3.0'
     logging_version = '3.4.1'
     lifecycle_version = "2.0.0"
+    glide = '4.9.0'
+    transitions = '1.0.1'
+    rxAndroid = '2.1.1'
+    rxJava = '2.1.1'
+    rxKotlin = '2.4.0'
+    rxBinding = '3.1.0'
+    rxAdapter = '2.3.0'
+    timber = '2.3.0'
+    multidex_version = '2.0.1'
 
-    dependencies = [
-            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
-            appCompat          : "androidx.appcompat:appcompat:$appCompat",
-            core               : "androidx.core:core-ktx:$androidCore",
-            materialDesign     : "com.google.android.material:material:$androidMaterial",
-            constraintLayout   : "androidx.constraintlayout:constraintlayout:$constraintLayout",
-            androidLegacy      : "androidx.legacy:legacy-support-v4:$androidLegacy",
-            junit              : "junit:junit:$junitVersion",
-            lifecycleViewModel : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
-            lifecycleExtensions: "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
-            ankoCommons        : "org.jetbrains.anko:anko-commons:$anko_version",
-            firebaseCore       : "com.google.firebase:firebase-core:$firebaseCore",
-            lottie             : "com.airbnb.android:lottie:$lottie",
-            koin               : "org.koin:koin-android:$koin",
-            navFragment        : "androidx.navigation:navigation-fragment-ktx:$nav_version",
-            navUI              : "androidx.navigation:navigation-ui-ktx:$nav_version",
-            rxandroid          : "io.reactivex.rxjava2:rxandroid:2.1.1",
-            rxjava             : "io.reactivex.rxjava2:rxjava:2.1.1",
-            rxkotlin           : "io.reactivex.rxjava2:rxkotlin:2.4.0",
-            retrofitRx         : "com.squareup.retrofit2:adapter-rxjava2:2.3.0",
-            // ANDROID-NETWORKING
 
-            retrofit           :"com.squareup.retrofit2:retrofit:$retrofit_version",
-            gson               :"com.squareup.retrofit2:converter-gson:$gson_version",
-            okHttp             :"com.squareup.okhttp3:okhttp:$okhttp_version",
-            okLogging          :"com.squareup.okhttp3:logging-interceptor:$okhttp_version_loggin",
-            liveDataViewModel  :"androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    //Test
+    mockitoCore = '2.25.1'
+    junit_version = '4.12'
+    truth_version = '1.0'
+    runner_version = '1.2.0'
+    espresso_version = '3.2.0'
+    rules_version = '1.2.0'
+    runnerVersion = "1.2.0"
+    androidx_junit_version = "1.1.1"
+    kointeste = "2.0.1"
+    mockk = "1.9.1"
+    mockitokotlin = "2.1.0"
+    mockwebserver = "3.4.1"
+    testng = "6.9.6"
+
+
+    def modules = [
+            data  : ':data',
+            domain: ':domain'
     ]
 
-    testDependecies = [
-            lifecycleTesting: "androidx.arch.core:core-testing:$lifecycle_version",
-            runner          : "androidx.test:runner:$runnerVersion",
-            espresso        : "androidx.test.espresso:espresso-core:$espressoVersion",
+    ///
+    /// Module Dependencies
+    ///
+
+    def supportAnnotationsExclude = {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
+
+    def foundationDependencies = [
+            kotlin             : [group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk7', version: kotlin_version],
+            appCompat          : [group: 'androidx.appcompat', name: 'appcompat', version: appCompat],
+            core               : [group: 'androidx.core', name: 'core-ktx', version: androidCore],
+            materialDesign     : [group: 'com.google.android.material', name: 'material', version: androidMaterial],
+            constraintLayout   : [group: 'androidx.constraintlayout', name: 'constraintlayout', version: constraintLayout],
+            androidLegacy      : [group: 'androidx.legacy', name: 'legacy-support-v4', version: androidLegacy],
+            lifecycleViewModel : [group: 'androidx.lifecycle', name: 'lifecycle-viewmodel-ktx', version: lifecycle_version],
+            lifecycleExtensions: [group: 'androidx.lifecycle', name: 'lifecycle-extensions', version: lifecycle_version],
+            lottie             : [group: 'com.airbnb.android', name: 'lottie', version: lottie],
+            koin               : [group: 'org.koin', name: 'koin-android', version: koin],
+            navfragment        : [group: 'androidx.navigation', name: 'navigation-fragment-ktx', version: nav_version],
+            navUI              : [group: 'androidx.navigation', name: 'navigation-ui-ktx', version: nav_version],
+            transitions        : [group: 'androidx.transition', name: 'transition', version: transitions],
+            timber             : [group: 'com.jakewharton.timber', name: 'timber', version: timber],
+            multidex           : [group: 'androidx.multidex', name: 'multidex', version: multidex_version],
+
+
     ]
 
+    def androidNetworking = [
+            retrofit     : [group: 'com.squareup.retrofit2', name: 'retrofit', version: retrofit_version],
+            gsonRetrofit : [group: 'com.squareup.retrofit2', name: 'converter-gson', version: gson_version],
+            okHttp       : [group: 'com.squareup.okhttp3', name: 'okhttp', version: okhttp_version],
+            okHttpLogging: [group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: okhttp_version_loggin],
+            rxAndroid    : [group: 'io.reactivex.rxjava2', name: 'rxandroid', version: rxAndroid],
+            rxJava       : [group: 'io.reactivex.rxjava2', name: 'rxjava', version: rxJava],
+            rxkotlin     : [group: 'io.reactivex.rxjava2', name: 'rxkotlin', version: rxKotlin],
+            rxBinding    : [group: 'com.jakewharton.rxbinding3', name: 'rxbinding', version: rxBinding],
+            retrofitRx   : [group: 'com.squareup.retrofit2', name: 'adapter-rxjava2', version: rxAdapter]
+    ]
+    def imageDownloading = [
+            glide          : [group: 'com.github.bumptech.glide', name: 'glide', version: glide],
+            glideAnnotation: [group: 'com.github.bumptech.glide', name: 'compiler', version: glide],
 
+    ]
+
+    def testDependencies = [
+            lifecycleTesting: [group: 'androidx.arch.core', name: 'core-testing', version: lifecycle_version],
+            runner          : [group: 'androidx.test', name: 'runner', version: runnerVersion],
+            espresso        : [group: 'androidx.test.espresso', name: 'espresso-core', version: espresso_version],
+            junit           : [group: 'junit', name: 'junit', version: junit_version],
+            testRules       : [group: 'androidx.test', name: 'rules', version: rules_version],
+            espressoIdling  : [group: 'androidx.test.espresso', name: 'espresso-idling-resource', version: espresso_version],
+            junitExt        : [group: 'androidx.test.ext', name: 'junit', version: androidx_junit_version],
+            espressoIntent  : [group: 'androidx.test.espresso', name: 'espresso-intents', version: espresso_version],
+            espressoWeb     : [group: 'androidx.test.espresso', name: 'espresso-web', version: espresso_version],
+            truth           : [group: 'com.google.truth', name: 'truth', version: truth_version],
+            koinTest        : [group: 'org.koin', name: 'koin-test', version: kointeste],
+            mockTest        : [group: 'io.mockk', name: 'mockk', version: mockk],
+            mockitoKotlin   : [group: 'com.nhaarman.mockitokotlin2', name: 'mockito-kotlin', version: mockitokotlin],
+            mockWebServer   : [group: 'com.squareup.okhttp3', name: 'mockwebserver', version: mockwebserver],
+            testing         : [group: 'org.testng', name: 'testng', version: testng],
+            mockitoCore     : [group: 'org.mockito', name: 'mockito-core', version: mockitoCore],
+
+    ]
+
+    appNetworkingModule = [
+            [configuration: "implementation", dependency: androidNetworking.retrofit],
+            [configuration: "implementation", dependency: androidNetworking.gsonRetrofit],
+            [configuration: "implementation", dependency: androidNetworking.okHttpLogging],
+            [configuration: "implementation", dependency: androidNetworking.rxAndroid],
+            [configuration: "implementation", dependency: androidNetworking.rxJava],
+            [configuration: "implementation", dependency: androidNetworking.rxkotlin],
+            [configuration: "implementation", dependency: androidNetworking.rxBinding],
+            [configuration: "implementation", dependency: androidNetworking.retrofitRx],
+    ]
+
+    appFoundationModule = [
+
+            [configuration: "implementation", dependency: foundationDependencies.kotlin],
+            [configuration: "implementation", dependency: foundationDependencies.appCompat],
+            [configuration: "implementation", dependency: foundationDependencies.core],
+            [configuration: "implementation", dependency: foundationDependencies.materialDesign],
+            [configuration: "implementation", dependency: foundationDependencies.constraintLayout],
+            [configuration: "implementation", dependency: foundationDependencies.androidLegacy],
+            [configuration: "implementation", dependency: foundationDependencies.lifecycleViewModel],
+            [configuration: "implementation", dependency: foundationDependencies.lifecycleExtensions],
+            [configuration: "implementation", dependency: foundationDependencies.lottie],
+            [configuration: "implementation", dependency: foundationDependencies.koin],
+            [configuration: "implementation", dependency: foundationDependencies.navfragment],
+            [configuration: "implementation", dependency: foundationDependencies.navUI],
+            [configuration: "implementation", dependency: foundationDependencies.transitions],
+            [configuration: "implementation", dependency: foundationDependencies.timber],
+            [configuration: "implementation", dependency: foundationDependencies.multidex],
+
+            /**
+             * Image Downloading
+             */
+            [configuration: "implementation", dependency: imageDownloading.glide],
+            [configuration: "annotationProcessor", dependency: imageDownloading.glideAnnotation],
+    ]
+    appTestingModule = [
+            [configuration: "androidTestImplementation", dependency: testDependencies.espresso,
+             options      : supportAnnotationsExclude],
+            [configuration: "testImplementation", dependency: testDependencies.junit,
+             options      : supportAnnotationsExclude],
+            [configuration: "testImplementation", dependency: testDependencies.lifecycleTesting,
+             options      : supportAnnotationsExclude],
+            [configuration: "androidTestImplementation", dependency: testDependencies.runner,
+             options      : supportAnnotationsExclude],
+            [configuration: "androidTestImplementation", dependency: testDependencies.testRules,
+             options      : supportAnnotationsExclude],
+            [configuration: "implementation", dependency: testDependencies.espressoIdling,
+             options      : supportAnnotationsExclude],
+            [configuration: "androidTestImplementation", dependency: testDependencies.junitExt,
+             options      : supportAnnotationsExclude],
+            [configuration: "androidTestImplementation", dependency: testDependencies.espressoIntent,
+             options      : supportAnnotationsExclude],
+            [configuration: "androidTestImplementation", dependency: testDependencies.espressoWeb,
+             options      : supportAnnotationsExclude],
+            [configuration: "testImplementation", dependency: testDependencies.truth,
+             options      : supportAnnotationsExclude],
+            [configuration: "androidTestImplementation", dependency: testDependencies.mockWebServer,
+             options      : supportAnnotationsExclude],
+            [configuration: "testImplementation", dependency: testDependencies.koinTest,
+             options      : supportAnnotationsExclude],
+            [configuration: "testImplementation", dependency: testDependencies.mockTest,
+             options      : supportAnnotationsExclude],
+            [configuration: "testImplementation", dependency: testDependencies.mockitoKotlin,
+             options      : supportAnnotationsExclude],
+            [configuration: "testImplementation", dependency: testDependencies.testing,
+             options      : supportAnnotationsExclude],
+            [configuration: "testImplementation", dependency: testDependencies.mockitoCore,
+             options      : supportAnnotationsExclude],
+    ]
+
+    appModuleDependencies = [
+
+            //            // Modules
+//            [configuration: "compile", dependency: project(modules.data)],
+//            [configuration: "compile", dependency: project(modules.domain)],
+    ]
 }
