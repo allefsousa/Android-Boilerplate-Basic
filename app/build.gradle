@@ -68,6 +68,52 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appCompat"
     implementation "androidx.core:core-ktx:$androidCore"
     implementation "com.google.android.material:material:$androidMaterial"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout"
+    implementation "androidx.legacy:legacy-support-v4:$androidLegacy"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "com.airbnb.android:lottie:$lottie"
+    implementation "org.koin:koin-android:$koin"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.transition:transition:$transitions"
+    implementation "com.jakewharton.timber:timber:$timber"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$gson_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version_loggin"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlin"
+    implementation "com.jakewharton.rxbinding3:rxbinding:$rxBinding"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rxAdapter"
+    implementation "com.github.bumptech.glide:glide:$glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
+
+
+
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test:runner:$runnerVersion"
+    androidTestImplementation "androidx.test:rules:$runnerVersion"
+    androidTestImplementation "androidx.test:rules:$runnerVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-web:$espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-web:$espresso_version"
+
+
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
+    testImplementation "com.google.truth:truth:$truth_version"
+    testImplementation "io.mockk:mockk:$mockk"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitokotlin"
+    testImplementation "org.testng:testng:$testng"
+    testImplementation "org.mockito:mockito-core:$mockitoCore"
+
+
 
 
 }
