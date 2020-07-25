@@ -63,10 +63,6 @@ ext {
 
 
     def foundationDependencies = [
-            kotlin             : [group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk7', version: kotlin_version],
-            appCompat          : [group: 'androidx.appcompat', name: 'appcompat', version: appCompat],
-            core               : [group: 'androidx.core', name: 'core-ktx', version: androidCore],
-            materialDesign     : [group: 'com.google.android.material', name: 'material', version: androidMaterial],
             constraintLayout   : [group: 'androidx.constraintlayout', name: 'constraintlayout', version: constraintLayout],
             androidLegacy      : [group: 'androidx.legacy', name: 'legacy-support-v4', version: androidLegacy],
             lifecycleViewModel : [group: 'androidx.lifecycle', name: 'lifecycle-viewmodel-ktx', version: lifecycle_version],

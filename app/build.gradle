@@ -23,13 +23,11 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug{
             minifyEnabled false
             shrinkResources false
-            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testCoverageEnabled = true
         }
@@ -66,15 +64,10 @@ android {
 
 dependencies {
 
-    rootProject.appFoundationModule.each {
-        add(it.configuration, it.dependency, it.options)
-    }
-    rootProject.appNetworkingModule.each {
-        add(it.configuration, it.dependency, it.options)
-    }
-    rootProject.appTestingModule.each {
-        add(it.configuration, it.dependency, it.options)
-    }
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$appCompat"
+    implementation "androidx.core:core-ktx:$androidCore"
+    implementation "com.google.android.material:material:$androidMaterial"
 
 
 }
