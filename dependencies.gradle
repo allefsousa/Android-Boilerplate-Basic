@@ -39,7 +39,7 @@ ext {
     runner_version = '1.2.0'
     espresso_version = '3.2.0'
     rules_version = '1.2.0'
-    runnerVersion = "1.2.0"
+    runnerVersion = "1.4.0"
     androidx_junit_version = "1.1.1"
     kointeste = "2.0.1"
     mockk = "1.9.1"
