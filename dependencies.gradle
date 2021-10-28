@@ -14,7 +14,7 @@ ext {
     androidMaterial = "1.2.0-beta01"
     androidLegacy = "1.0.0"
     koin = "2.2.2"
-    nav_version = '2.1.0-beta02'
+    nav_version = '2.4.0-beta01'
     retrofit_version = '2.9.0'
     okhttp_version = '4.9.2'
     okhttp_version_loggin = '4.9.2'
