@@ -28,7 +28,7 @@ ext {
     rxKotlin = '2.4.0'
     rxBinding = '3.1.0'
     rxAdapter = '2.3.0'
-    timber = '2.3.0'
+    timber = '5.0.1'
     multidex_version = '2.0.1'
 
 
