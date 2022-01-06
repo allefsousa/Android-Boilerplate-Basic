@@ -45,6 +45,6 @@ ext {
     mockk = "1.12.0"
     mockitokotlin = "2.1.0"
     mockwebserver = "3.4.1"
-    testng = "6.9.6"
+    testng = "7.5"
 
 }
